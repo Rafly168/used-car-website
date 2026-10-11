@@ -1,0 +1,528 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --main-color: #d30404;
+    --text-color: #020102;
+    --bg-color: #fff;
+}
+
+/* Mencegah scrollbar horizontal & gap putih tepi layar */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* custom scroll bar */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background: var(--text-color);
+}
+
+section {
+    padding: 4rem 0 2rem;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+/* ================= HEADER & NAVBAR PERBAIKAN ================= */
+header {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: transparent;
+    transition: 0.4s ease;
+}
+
+/* Saat di-scroll: background putih & bayangan */
+header.shadow {
+    background: var(--bg-color);
+    box-shadow: 4px 4px 20px rgba(15, 54, 55, 0.1);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 35px;
+}
+
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+header.shadow #menu-icon {
+    color: var(--text-color);
+}
+
+/* Logo: Putih saat di atas, Gelap saat di-scroll */
+/* Logo: Warna hitam permanen dari awal */
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #020102; /* Mengubah warna UniCar menjadi hitam */
+    transition: 0.3s;
+}
+
+header.shadow .logo {
+    color: #020102; /* Tetap hitam saat di-scroll */
+}
+
+.logo span {
+    color: var(--main-color); /* Kata Trucks tetap merah */
+}
+
+.navbar {
+    display: flex;
+    column-gap: 2rem;
+}
+
+/* Teks Navbar: Putih saat di atas, Gelap saat di-scroll */
+.navbar a {
+    color: var(--text-color) !important; 
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header.shadow .navbar a {
+    color: var(--main-color) !important;
+}
+
+.navbar a:hover,
+.navbar a.active,
+header.shadow .navbar a:hover,
+header.shadow .navbar a.active {
+    color: var(--main-color) !important;
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* HOME SECTION */
+.home {
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    background: url(img/Background-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
+}
+
+.home-text {
+    padding-left: 130px;
+}
+
+.home-text h1 {
+    font-size: 2.4rem;
+}
+
+.home-text span {
+    color: var(--main-color);
+}
+
+.home-text p {
+    font-size: 0.938rem;
+    font-weight: 300;
+    margin: 0.5rem 0 1.2rem;
+}
+
+.btn {
+    padding: 10px 22px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 0.3rem;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #fd052f;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading span {
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.heading p {
+    font-size: 0.938rem;
+    font-weight: 300;
+}
+
+/* SECTION PRODUCT */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-container .box {
+    flex: 1 1 17rem;
+    position: relative;
+    height: 200px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.product-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.product-container .box img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.product-container .box h2 {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-weight: 400;
+    font-size: 1rem;
+    background: var(--bg-color);
+    padding: 8px;
+    border-radius: 0.5rem;
+}
+
+.product-container .box:hover h2 {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img {
+    flex: 1 1 21rem;
+}
+
+.about-text {
+    flex: 1 1 21rem;
+}
+
+.about-text span {
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.about-text h2 {
+    font-size: 1.7rem;
+}
+
+.about-text p {
+    font-size: 0.938rem;
+    margin: 0.5rem 0 1.4rem;
+}
+
+/* SECTION PARTS */
+.parts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.8rem;
+    margin-top: 2rem;
+}
+
+.parts-container .box {
+    background: #f6f6f6;
+    border-radius: 0.5rem;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.parts-container .box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.parts-container .box h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.parts-container .box span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.parts-container .box .bx {
+    color: var(--main-color);
+    margin: 0.5rem 0;
+}
+
+.parts-container .box .details {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.parts-container .box .details:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+/* BLOG SECTION */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-container .box {
+    flex: 1 1 13rem;
+    padding: 20px;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.blog-container .box:hover {
+    background: #f6f6f6;
+}
+
+.blog-container .box span {
+    font-size: 0.8rem;
+    color: var(--main-color);
+}
+
+.blog-container h3 {
+    font-size: 1.2rem;
+}
+
+.blog-container .box p {
+    font-size: 0.938rem;
+    margin: 4px 0;
+}
+
+.blog-container .box .blog-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    color: var(--text-color);
+}
+
+.blog-container .box .blog-btn .bx {
+    font-size: 20px;
+}
+
+.blog-container .box .blog-btn:hover {
+    color: var(--main-color);
+    column-gap: 0.7rem;
+    transition: 0.4s;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #020102; 
+    color: #f6f6f6;
+    border-top: 2px solid var(--main-color);
+    padding-top: 3rem;
+    padding-bottom: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1068px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-container .logo {
+    color: #fff;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social a {
+    font-size: 24px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: var(--main-color);
+}
+
+.footer-box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.footer-box a,
+.footer-box p {
+    color: #a3a3a3;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-box a:hover {
+    color: var(--main-color);
+}
+
+/* COPYRIGHT DI DALAM FOOTER */
+.copyright {
+    padding: 20px;
+    text-align: center;
+    color: #a3a3a3;
+    background-color: #020102;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* FORM PENCARIAN KATALOG */
+.catalog-search-container {
+    max-width: 600px;
+    margin: 2rem auto 1rem;
+    padding: 0 15px;
+}
+
+.catalog-search-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid var(--main-color);
+    border-radius: 30px;
+    padding: 5px 10px 5px 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.catalog-search-form .search-icon-input {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+.catalog-search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    background: transparent;
+}
+
+.catalog-search-form .btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-reset-search {
+    color: #888;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.btn-reset-search:hover {
+    color: var(--main-color);
+}
+
+/* PESAN DATA TIDAK DITEMUKAN */
+.no-data-alert {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    background: #f6f6f6;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.no-data-alert i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.no-data-alert p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 15px;
+}
